@@ -14,7 +14,7 @@ function getQuater(x, y) {
   } else if (x < 0 && y < 0) {
     quaterNumber = 'Third quater' ;
   } else if (x > 0 && y < 0) {
-    quaterNumber = 'Fourth quater'
+    quaterNumber = 'Fourth quater';
   }
 
   return quaterNumber;
@@ -22,8 +22,13 @@ function getQuater(x, y) {
 
 function getSumOfPositiveNumbers(firstNum, secondNum, thirdNum) {
   const arr = [firstNum, secondNum, thirdNum];
-
-  return arr.filter(el => el > 0).reduce((acc, curVal) => acc + curVal, 0);
+  let sum = 0;
+  arr.forEach(elem => {
+    if (elem > 0) {
+      sum += elem;
+    }
+  });
+  return sum;
 }
 
 function getMaxValue(a, b, c) {
@@ -43,7 +48,7 @@ function getStudentMark(rating) {
     mark = 'C';
   } else if (rating >= 75 && rating <= 89) {
     mark = 'B';
-  } else if (rating >= 90 && rating <= 39) {
+  } else if (rating >= 90 && rating <= 100) {
     mark = 'A';
   }
 
