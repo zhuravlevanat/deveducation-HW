@@ -70,7 +70,7 @@ function getInverseNumber(number) {
 
 
 console.log(getSumOfEvenNumbers());
-console.log(isPrimeNumber(7));
+console.log(isPrimeNumber(1));
 console.log(sqrt(64));
 console.log(getFactorial(3));
 console.log(getSumOfNumbers(4567));

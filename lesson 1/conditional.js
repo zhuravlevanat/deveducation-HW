@@ -48,12 +48,7 @@ function getSumOfPositiveNumbers(firstNum, secondNum, thirdNum) {
 }
 
 function getMaxValue(a, b, c) {
-  let maxValue;
-  if (a*b*c > a+b+c) {
-    maxValue = a*b*c + 3;
-  } else maxValue = a+b+c+3;
-
-  return maxValue;
+  return (a*b*c > a+b+c) ? a*b*c + 3: a+b+c+3;
 }
 
 function getStudentMark(rating) {
