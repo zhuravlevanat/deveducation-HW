@@ -3,11 +3,16 @@
 function getDayName (day) {
   const dayNames = 
     ['monday', 'thuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-  return dayNames.filter((elem, index) => index + 1 == day).join('');
-}
+  for (let i = 0; i < dayNames.length; i++) {
+    if (day == i+1) {
+      return dayNames[i]
+    }
+  }
+ }
 
 function getDistance (x1, y1, x2, y2) {
   const dist = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
+  console.log(dist);
   return Math.trunc(dist * 100) / 100;
 };
 

@@ -38,20 +38,23 @@ function insertionSort(array) {
 }
 
 function quickSort(array) {
-  if (array.length == 0) return [];
+	if (array.length <= 1) { 
+		return array;
+	} else {
 
-  let firstArr = secondArr = [];
-  const pivot = array[0];
-
-  for (let i = 1; i < array.length; i++) {
-    if (array[i] < pivot) {
-      firstArr[firstArr.length] = array[i];
-    } else {
-      secondArr[secondArr.length] = array[i]
-    }
-  }
-
-  return quickSort(firstArr).concat(pivot, quickSort(secondArr));
+		const firstArr = [];
+		const secondArr = [];
+		const pivot = array[0];
+		
+		for (var i = 1; i < array.length; i++) {
+			if (array[i] <= pivot) {
+				firstArr[firstArr.length] = array[i];
+			} else {
+				secondArr[secondArr.length] = array[i];
+			}
+		}
+		return quickSort(firstArr).concat(pivot, quickSort(secondArr));
+	}
 }
 
 function mergeSort(array) {
@@ -74,8 +77,6 @@ function merge(firstArr, secondArr) {
     const elem = (firstArr[i] < secondArr[j]) ? firstArr[i++] : secondArr[j++];
     newArr.push(elem);
   }
-
-  console.log(newArr.concat(firstArr.slice(i), secondArr.slice(j)))
 
   return newArr.concat(firstArr.slice(i), secondArr.slice(j));
 }

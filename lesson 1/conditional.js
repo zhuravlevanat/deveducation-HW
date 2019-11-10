@@ -7,7 +7,9 @@ function getSumOrMult(a, b) {
 function getQuater(x, y) {
   let quaterNumber;
 
-  if (x > 0 && y > 0) {
+  if (x == 0 && y == 0) {
+    quaterNumber = 'It`s the origin';
+  } else if  (x > 0 && y > 0) {
     quaterNumber = 'First quater';
   } else if (x < 0 && y > 0) {
     quaterNumber = 'Second quater';
@@ -15,24 +17,43 @@ function getQuater(x, y) {
     quaterNumber = 'Third quater' ;
   } else if (x > 0 && y < 0) {
     quaterNumber = 'Fourth quater';
+  } else if (x == 0) {
+    quaterNumber = 'It`s axis Y';
+  } else  if (y == 0) {
+    quaterNumber = 'It`s axis X';
   }
-
   return quaterNumber;
 }
 
 function getSumOfPositiveNumbers(firstNum, secondNum, thirdNum) {
-  const arr = [firstNum, secondNum, thirdNum];
   let sum = 0;
-  arr.forEach(elem => {
-    if (elem > 0) {
-      sum += elem;
-    }
-  });
+  if (firstNum > 0 && secondNum > 0 && thirdNum > 0) {
+    sum = firstNum + secondNum + thirdNum;
+  } else if (firstNum > 0 && secondNum > 0 && thirdNum < 0) {
+    sum = firstNum + secondNum;
+  } else if (firstNum > 0 && secondNum < 0 && thirdNum < 0) {
+    sum = firstNum;
+  } else if (firstNum < 0 && secondNum > 0 && thirdNum > 0) {
+    sum = secondNum + thirdNum;
+  } else if (firstNum < 0 && secondNum < 0 && thirdNum > 0) {
+    sum = thirdNum;
+  } else if (firstNum < 0 && secondNum > 0 && thirdNum < 0) {
+    sum = secondNum;
+  } else if (firstNum > 0 && secondNum < 0 && thirdNum > 0) {
+    sum = firstNum + thirdNum;
+  } else if (firstNum < 0 && secondNum < 0 && thirdNum < 0) {
+    sum = 0;
+  }
   return sum;
 }
 
 function getMaxValue(a, b, c) {
-  return Math.max(a*b*c, a+b+c) + 3
+  let maxValue;
+  if (a*b*c > a+b+c) {
+    maxValue = a*b*c + 3;
+  } else maxValue = a+b+c+3;
+
+  return maxValue;
 }
 
 function getStudentMark(rating) {
@@ -50,6 +71,8 @@ function getStudentMark(rating) {
     mark = 'B';
   } else if (rating >= 90 && rating <= 100) {
     mark = 'A';
+  } else if (rating < 0 || rating > 100) {
+    mark = 'You are out of rating range'
   }
 
   return mark;

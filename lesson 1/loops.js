@@ -13,6 +13,7 @@ function getSumOfEvenNumbers() {
 }
 
 function isPrimeNumber(number) {
+  if (number <= 0) return;
   let rezult = number != 1;
   for (let i = 2; i < number; i++) {
       if (number % i === 0) {
@@ -36,11 +37,8 @@ function sqrt(number) {
     return high;
 }
 
-function rootOfNumber(number) {
-
-}
-
 function getFactorial(n) {
+  if (n < 1) return;
   let factorial = 1;
   for (let i = 2; i <= n; i++) {
     factorial *= i;
