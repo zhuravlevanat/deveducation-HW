@@ -12,7 +12,6 @@ function getDayName (day) {
 
 function getDistance (x1, y1, x2, y2) {
   const dist = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2);
-  console.log(dist);
   return Math.trunc(dist * 100) / 100;
 };
 

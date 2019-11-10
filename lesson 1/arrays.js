@@ -26,6 +26,7 @@ function getMinIndexOfElementInArray(array) {
   
   for(let i = 1; i < array.length-1; i++) {
     if (array[i] < minElem) {
+      minElem = array[i]
       index = i;
     } 
   }
@@ -38,13 +39,14 @@ function getMaxIndexOfElementInArray(array) {
   
   for(let i = 1; i < array.length-1; i++) {
     if (array[i] > maxElem) {
+      maxElem = array[i]
       index = i;
     } 
   }
   return index;
 }
 
-function getSumOfElemetsWithEvenIndex(array) {
+function getSumOfElemetsWithOddIndex(array) {
   let i = 1, sum = 0;
   
   while(i < array.length) {
@@ -64,7 +66,7 @@ function getReversedArray(array) {
   return newArr;
 }
 
-function getNumberOfEvenElementsInArray(array) {
+function getNumberOfOddElementsInArray(array) {
   let result = 0;
 
   for (let i = 0; i < array.length; i++) {
@@ -93,7 +95,7 @@ console.log(getMinElementInArray([1, -16, 9, -7, 5, 3]));
 console.log(getMaxElementInArray([1, -16, 9, -7, 5, 3]));
 console.log(getMinIndexOfElementInArray([1, -16, 9, -7, 5, 3]));
 console.log(getMaxIndexOfElementInArray([1, -16, 9, -7, 5, 3]));
-console.log(getSumOfElemetsWithEvenIndex([1, -16, 9, -7, 5, 3]))
+console.log(getSumOfElemetsWithOddIndex([1, -16, 9, -7, 5, 3]))
 console.log(getReversedArray([1, -16, 9, -7, 5, 3]));
-console.log(getNumberOfEvenElementsInArray([1, -16, 9, -7, 5, 3]));
+console.log(getNumberOfOddElementsInArray([1, -16, 9, -7, 5, 3]));
 console.log(swapTwoPartsOfArray([1, 2, 3, 4, 5]))

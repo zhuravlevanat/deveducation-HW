@@ -13,7 +13,7 @@ function getSumOfEvenNumbers() {
 }
 
 function isPrimeNumber(number) {
-  if (number <= 0) return;
+  if (number <= 0) return false;
   let rezult = number != 1;
   for (let i = 2; i < number; i++) {
       if (number % i === 0) {
@@ -38,12 +38,9 @@ function sqrt(number) {
 }
 
 function getFactorial(n) {
-  if (n < 1) return;
-  let factorial = 1;
-  for (let i = 2; i <= n; i++) {
-    factorial *= i;
-  }
-  return factorial;
+  if (n < 0) return 'Factorial for positive numbers';  
+  
+  return (n > 1) ? n * getFactorial(n - 1) : 1;
 }
 
 function getSumOfNumbers(number) {
@@ -73,8 +70,8 @@ function getInverseNumber(number) {
 
 
 console.log(getSumOfEvenNumbers());
-console.log(isPrimeNumber(13));
+console.log(isPrimeNumber(7));
 console.log(sqrt(64));
-console.log(getFactorial(6));
+console.log(getFactorial(3));
 console.log(getSumOfNumbers(4567));
 console.log(getInverseNumber(4567));
