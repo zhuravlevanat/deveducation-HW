@@ -1,160 +1,185 @@
 describe('getSumOrMult', function() {
 
-  it('первый аргумент четный 2, return произведение аргументов 6', function() {
-    assert.equal(getSumOrMult(2, 3), 6);
+  it('first argument is even 2, return mult of args 6', () => {
+    const actual = getSumOrMult(2, 3);
+    const expected = 6;
+    assert.equal(actual, expected);
   });
 
-  it('первый аргумент нечетный 3, return суму аргументов 5', function() {
-    assert.equal(getSumOrMult(3, 2), 5);
+  it('first argument 3, return sum of args 5', () => {
+    const actual = getSumOrMult(3, 2);
+    const expected = 5;
+    assert.equal(actual, expected);
   });
 
-  it('если первый аргумент 0 return 0', function() {
-    assert.deepEqual(getSumOrMult(0, 2), 0);
+  it('first argument 0 return 0', () => {
+    const actual = getSumOrMult(0, 2);
+    const expected = 0;
+    assert.equal(actual, expected);
   });
 
-  it('если первый аргумент дробное число return "non valid data""non valid data"', function() {
-    assert.deepEqual(getSumOrMult(0.5, 2), "non valid data");
+  it('if one or both args undefined or NaN return "non valid data"', () => {
+    const actual = getSumOrMult(undefined, 'a');
+    const expected = 'non valid data';
+    assert.equal(actual, expected);
   });
-
-  it('если первый или оба аргументы undefined return "non valid data"', function() {
-    assert.deepEqual(getSumOrMult(undefined, 2), "non valid data");
-  });
-
-  it('если один или оба аргументы NaN, return "non valid data"', function() {
-    assert.deepEqual(getSumOrMult('a', 2), "non valid data");
-  }); 
-
 });
 
 describe('getQuater', function() {
 
-  it('первый аргумент > 0, второй аргумент > 0, return "First quater"', function() {
-    assert.equal(getQuater(5, 7), 'First quater');
+  it('first arg > 0, second arg > 0, return "First quater"', function() {
+    const actual = getQuater(5, 7);
+    const expected = 'First quater';
+    assert.equal(actual, expected);
+    
   });
 
-  it('первый аргумент < 0, второй аргумент > 0, return "Second quater"', function() {
-    assert.equal(getQuater(-5, 7), 'Second quater');
+  it('first arg < 0, second arg > 0, return "Second quater"', function() {
+    const actual = getQuater(-5, 7);
+    const expected = 'Second quater';
+    assert.equal(actual, expected);
   });
 
-  it('первый аргумент < 0, второй аргумент < 0, return "Third quater"', function() {
-    assert.equal(getQuater(-5, -7), 'Third quater');
+  it('first arg < 0, second arg < 0, return "Third quater"', function() {
+    const actual = getQuater(-5, -7);
+    const expected = 'Third quater';
+    assert.equal(actual, expected);
   });
 
-  it('первый аргумент > 0, второй аргумент < 0, return "Fourth quater"', function() {
-    assert.equal(getQuater(5, -7), 'Fourth quater');
+  it('first arg > 0, second arg < 0, return "Fourth quater"', function() {
+    const actual = getQuater(5, -7);
+    const expected = 'Fourth quater';
+    assert.equal(actual, expected);
   });
 
-  it('первый аргумент 0, второй аргумент не равен 0, return "It`s the origin"', function() {
-    assert.equal(getQuater(0, 0), 'It`s the origin');
+  it('first arg 0, second arg 0, return "It`s the origin"', function() {
+    const actual = getQuater(0, 0);
+    const expected = 'It`s the origin';
+    assert.equal(actual, expected);
   });
 
-  it('первый аргумент > 0, второй аргумент не равен 0, return "It`s axis Y"', function() {
-    assert.equal(getQuater(0, 2), 'It`s axis Y');
+  it('first arg > 0, second arg isn`t equal 0, return "It`s axis Y"', function() {
+    const actual = getQuater(0, 2);
+    const expected = 'It`s axis Y';
+    assert.equal(actual, expected);
   });
 
-  it('первый аргумент не равен 0, второй аргумент 0 return "It`s axis X"', function() {
-    assert.equal(getQuater(2, 0), 'It`s axis X');
+  it('first arg isn`t equal 0, second arg 0 return "It`s axis X"', function() {
+    const actual = getQuater(2, 0);
+    const expected = 'It`s axis X';
+    assert.equal(actual, expected);
   });
 
-  it('один или оба аргумента NaN, return NaN', function() {
-    assert.deepEqual(getQuater('a', 2), NaN);
-  });
-
-  it('один или оба аргумента undefined return NaN', function() {
-    assert.deepEqual(getQuater(undefined, 2), NaN);
+  it('one or both args NaN or undefined, return NaN', function() {
+    const actual = getQuater(undefined, 'a');
+    const expected = 'non valid data';
+    assert.deepEqual(actual, expected);    
   });
 });
 
 describe('getSumOfPositiveNumbers', function() {
-
-  it('первый аргумент 2 > 0, другие < 0 return первый 2', function() {
-    assert.equal(getSumOfPositiveNumbers(2, -3, -4), 2);
+  
+  it('first arg > 0, others < 0 return first arg', function() {
+    const actual = getSumOfPositiveNumbers(2, -3, -4);
+    const expected = 2;
+    assert.deepEqual(actual, expected); 
   });
 
-  it('первый и второй аргумент 2,3 > 0, тритий < 0 return 5', function() {
-    assert.equal(getSumOfPositiveNumbers(2, 3, -4), 5);
+  it('all three args > 0, return 9', function() {
+    const actual = getSumOfPositiveNumbers(2, 3, 4);
+    const expected = 9;
+    assert.deepEqual(actual, expected); 
   });
 
-  it('все три аргумента 2,3,4 > 0, return 9', function() {
-    assert.equal(getSumOfPositiveNumbers(2, 3, 4), 9);
+  it('one or both args NaN or undefined', function() {
+    const actual = getSumOfPositiveNumbers('a', 3, undefined);
+    const expected = 'non valid data';
+    assert.deepEqual(actual, expected); 
   });
-
-  it('один или больше аргументов NaN return NaN', function() {
-    assert.deepEqual(getSumOfPositiveNumbers('a', 3, 4), NaN);
-  });
-
-  it('один или больше аргументов undefined, return NaN', function() {
-    assert.deepEqual(getSumOfPositiveNumbers(undefined, 3, 4), NaN);
-  }); 
-
-});
+ });
 
 describe('getMaxValue', function() {
 
-  it('все аргументы 2,3,4 > 0 , return 27', function() {
-    assert.equal(getMaxValue(2, 3, 4), 27);
+  it('all args > 0 , return mult of args + 3', function() {
+    const actual = getMaxValue(2, 3, 4);
+    const expected = 27;
+    assert.deepEqual(actual, expected); 
   });
 
-  it('все аргументы 2,3,4 < 0, return -6', function() {
-    assert.equal(getMaxValue(-2, -3, -4), -6);
+  it('all args < 0, return sum of args + 3', function() {
+    const actual = getMaxValue(-2, -3, -4);
+    const expected = -6;
+    assert.deepEqual(actual, expected); 
   });
 
-  it('если один или несколько аргументов 0, return сумму аргументов + 3', function() {
-    assert.equal(getMaxValue(0, 3, 4), 10);
+  it('one or more args equal 0, return sum of arg + 3', function() {
+    const actual = getMaxValue(0, 3, 4);
+    const expected = 10;
+    assert.deepEqual(actual, expected); 
   });
 
-  it('если все аргументы 0, return 3', function() {
-    assert.equal(getMaxValue(0, 0, 0), 3);
+  it('all args equal 0, return 3', function() {
+    const actual = getMaxValue(0, 0, 0);
+    const expected = 3;
+    assert.deepEqual(actual, expected); 
   });
 
-  it('один или больше аргументов NaN return NaN', function() {
-    assert.deepEqual(getMaxValue('a', 3, 4), NaN);
+  it('one or both args NaN or undefined return NaN', function() {
+    const actual = getMaxValue('a', 3, undefined);
+    const expected = 'non valid data';
+    assert.deepEqual(actual, expected); 
   });
-
-  it('один или больше аргументов undefined, return NaN', function() {
-    assert.deepEqual(getMaxValue(undefined, 3, 4), NaN);
-  }); 
-
 });
 
 describe('getStudentMark', function() {
 
   it('if rating >= 0 and <= 19, return "F"', function() {
-    assert.equal(getStudentMark(2), "F");
+    const actual = getStudentMark(2);
+    const expected = 'F';
+    assert.deepEqual(actual, expected); 
   });
 
   it('if rating >= 20 and <= 39, return "E"', function() {
-    assert.equal(getStudentMark(21), "E");
+    const actual = getStudentMark(21);
+    const expected = 'E';
+    assert.deepEqual(actual, expected); 
   });
 
   it('if rating >= 40 and <= 59, return "D"', function() {
-    assert.equal(getStudentMark(52), "D");
+    const actual = getStudentMark(52);
+    const expected = 'D';
+    assert.deepEqual(actual, expected); 
   });
 
   it('if rating >= 60 and <= 74, return "C"', function() {
-    assert.equal(getStudentMark(68), "C");
+    const actual = getStudentMark(68);
+    const expected = 'C';
+    assert.deepEqual(actual, expected); 
   });
 
   it('if rating >= 75 and <= 89, return "B"', function() {
-    assert.equal(getStudentMark(81), "B");
+    const actual = getStudentMark(81);
+    const expected = 'B';
+    assert.deepEqual(actual, expected); 
   });
 
   it('if rating >= 90 and <= 100, return "A"', function() {
-    assert.equal(getStudentMark(90), "A");
+    const actual = getStudentMark(90);
+    const expected = 'A';
+    assert.deepEqual(actual, expected); 
   });
 
   it('if rating > 100 and < 0, return "You are out of rating range"', function() {
-    assert.equal(getStudentMark(200), "You are out of rating range");
+    const actual = getStudentMark(200);
+    const expected = 'You are out of rating range';
+    assert.deepEqual(actual, expected); 
   });
 
-  it('if argument is NaN return NaN', function() {
-    assert.deepEqual(getStudentMark(NaN), NaN);
+  it('if argument is NaN return "non valid data"', function() {
+    const actual = getStudentMark('a');
+    const expected = 'non valid data';
+    assert.deepEqual(actual, expected); ;
   });
-
-  it('if argument is undefined, return NaN', function() {
-    assert.deepEqual(getStudentMark(undefined), NaN);
-  }); 
-
 });
 
 

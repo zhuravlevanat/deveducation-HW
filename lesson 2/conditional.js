@@ -13,7 +13,7 @@ function getQuater(x, y) {
   y = Number(y);
   let quaterNumber;
 
-  if (isNaN(x) || isNaN(y)) return NaN
+  if (isNaN(x) || isNaN(y)) return 'non valid data'
 
   if (x == 0 && y == 0) {
     quaterNumber = 'It`s the origin';
@@ -38,7 +38,7 @@ function getSumOfPositiveNumbers(firstNum, secondNum, thirdNum) {
   firstNum = Number(firstNum);
   secondNum = Number(secondNum);
   thirdNum = Number(thirdNum);
-  if (isNaN(firstNum) || isNaN(secondNum) || isNaN(thirdNum)) return NaN
+  if (isNaN(firstNum) || isNaN(secondNum) || isNaN(thirdNum)) return 'non valid data'
 
   if (firstNum > 0) sum += firstNum;
   if (secondNum > 0) sum += secondNum;
@@ -51,13 +51,13 @@ function getMaxValue(a, b, c) {
   a = Number(a);
   b = Number(b);
   c = Number(c);
-  if (isNaN(a) || isNaN(b) || isNaN(c)) return NaN;
+  if (isNaN(a) || isNaN(b) || isNaN(c)) return 'non valid data';
   return (a*b*c > a+b+c) ? a*b*c + 3: a+b+c+3;
 }
 
 function getStudentMark(rating) {
   rating = Number(rating);
-  if (isNaN(rating)) return NaN;
+  if (isNaN(rating)) return 'non valid data';
   let mark;
 
   if (rating >= 0 && rating <= 19) {
