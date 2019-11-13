@@ -1,38 +1,42 @@
-describe('getDayName', function() {
+describe('getDayName', () => {
 
-  it('если аргумент равен 3, return "wednesday"', function() {
-    assert.equal(getDayName(3), "wednesday");
+  it('if argument equal 3, return "wednesday"', () => {
+    const actual = getDayName(3);
+    const expected = 'wednesday';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент меньше 1 и больше 7 return "not valid data"', function() {
-    assert.equal(getDayName(10), "not valid data");
+  it('if argument < 1 && > 7, return "not valid data"', () => {
+    const actual = getDayName(30);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.deepEqual(getDayName(NaN), "not valid data");
-  }); 
-
-  it('если аргумент undefined, return "not valid data"', function() {
-    assert.deepEqual(getDayName(undefined), "not valid data");
-  }); 
+  it('if argument NaN or undefined, return "not valid data"', () => {
+    const actual = getDayName('a');
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
 });
 
-describe('getDistance', function() {
+describe('getDistance', () => {
 
-  it('если координаты равны -2.3, 4, 8.5, 0.7, return 11.29', function() {
-    assert.equal(getDistance(-2.3, 4, 8.5, 0.7), 11.29);
+  it('if coords equal -2.3, 4, 8.5, 0.7, return 11.29', () => {
+    const actual = getDistance(-2.3, 4, 8.5, 0.7);
+    const expected = 11.29;
+    assert.equal(actual, expected);
   });
 
-  it('если все или одна из координат NaN, return "not valid data"', function() {
-    assert.equal(getDistance(-2.3, NaN, 8.5, 0.7), "not valid data");
+  it('if one or more coords equal NaN, return "not valid data"', () => {
+    const actual = getDistance(-2.3, 4, 'a', 0.7);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если все или одна из координат undefined, return "not valid data"', function() {
-    assert.equal(getDistance(-2.3, 8.5, undefined, 0.7), "not valid data");
-  }); 
-
-  it('если количество аргументов не равно 4, return "not valid data"', function() {
-    assert.deepEqual(getDistance(-2.3, 4, 8.5), "not valid data");
-  }); 
-
+  it('if number of coords < 4, return "not valid data"', () => {
+    const actual = getDistance(-2.3, 4, 0.7);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
 });
+

@@ -27,7 +27,7 @@ function isPrimeNumber(number) {
 
 function sqrt(number) {
   number = Number(number);
-  if (number < 0 || !isFinite(number) || isNaN(number) || (number ^ 0) !== number) return NaN; 
+  if (number < 0 || !isFinite(number) || isNaN(number) || (number ^ 0) !== number) return 'not valid data'; 
   let low = 0, high = number;
     while(low <= high) {
       let middle = Math.floor((low + high) / 2);
@@ -42,7 +42,7 @@ function sqrt(number) {
 
 function getFactorial(number) {
   number = Number(number);
-  if (number < 0 || !isFinite(number) || isNaN(number) || (number ^ 0) !== number) return NaN; 
+  if (number < 0 || !isFinite(number) || isNaN(number) || (number ^ 0) !== number) return 'not valid data'; 
   if (number < 0) return NaN;   
   let result = 1;
   for (i = 1; i <= number; i++) 
@@ -53,7 +53,7 @@ function getFactorial(number) {
 
 function getSumOfNumbers(number) {
   number = Number(number);
-  if (!isFinite(number) || isNaN(number) || (number ^ 0) !== number) return NaN; 
+  if (!isFinite(number) || isNaN(number) || (number ^ 0) !== number) return 'not valid data'; 
   if (number < 0) number = number*(-1);
   let sum = 0;
   while (number > 0) {

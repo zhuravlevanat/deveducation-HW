@@ -1,134 +1,206 @@
-describe('bubbleSort', function() {
+describe('bubbleSort', () => {
 
-  it('для массива [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', function() {
-    assert.deepEqual(bubbleSort([9, -8, 0, 4, 3]), [-8, 0, 3, 4, 9]);
+  it('for array [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', () => {
+    const actual = bubbleSort([9, -8, 0, 4, 3]);
+    const expected = [-8, 0, 3, 4, 9];
+    assert.deepEqual(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(bubbleSort(-578), "not valid data");
+  it('for argument isn`t array, return "not valid data"', () => {
+    const actual = bubbleSort(573);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(bubbleSort(NaN), "not valid data");
+  it('if array length equal 0, return "no data"', () => {
+    const actual = bubbleSort([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 0, "no data"', function() {
-    assert.equal(bubbleSort([]), "no data");
-  });
+  it('if array length equal 1, return array', () => {
+    const actual = bubbleSort([1]);
+    const expected = [1];
+    assert.deepEqual(actual, expected);
+  });  
 
-  it('если длина массива равна 1, return этот массив', function() {
-    assert.deepEqual(bubbleSort([1]), [1]);
-  });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(bubbleSort(['a', 'b']), "not valid data");
-  });
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = bubbleSort(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  }); 
 });
 
-describe('selectionSort', function() {
+describe('selectionSort', () => {
 
-  it('для массива [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', function() {
-    assert.deepEqual(selectionSort([9, -8, 0, 4, 3]), [-8, 0, 3, 4, 9]);
+  it('for array [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', () => {
+    const actual = selectionSort([9, -8, 0, 4, 3]);
+    const expected = [-8, 0, 3, 4, 9];
+    assert.deepEqual(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(selectionSort(-578), "not valid data");
+  it('for argument isn`t array, return "not valid data"', () => {
+    const actual = selectionSort(573);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(selectionSort(NaN), "not valid data");
+  it('if array length equal 0, return "no data"', () => {
+    const actual = selectionSort([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 0, return "no data"', function() {
-    assert.equal(selectionSort([]), "no data");
-  });
+  it('if array length equal 1, return array', () => {
+    const actual = selectionSort([1]);
+    const expected = [1];
+    assert.deepEqual(actual, expected);
+  });  
 
-  it('если длина массива равна 1, return этот массив', function() {
-    assert.deepEqual(selectionSort([1]), [1]);
-  });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(selectionSort(['a', 'b']), "not valid data");
-  });
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = selectionSort(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  }); 
 });
 
-describe('insertionSort', function() {
+describe('insertionSort', () => {
 
-  it('для массива [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', function() {
-    assert.deepEqual(insertionSort([9, -8, 0, 4, 3]), [-8, 0, 3, 4, 9]);
+  it('for array [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', () => {
+    const actual = insertionSort([9, -8, 0, 4, 3]);
+    const expected = [-8, 0, 3, 4, 9];
+    assert.deepEqual(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(insertionSort(-578), "not valid data");
+  it('for argument isn`t array, return "not valid data"', () => {
+    const actual = insertionSort(573);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(insertionSort(NaN), "not valid data");
+  it('if array length equal 0, return "no data"', () => {
+    const actual = insertionSort([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 0, return "no data"', function() {
-    assert.equal(insertionSort([]), "no data");
-  });
+  it('if array length equal 1, return array', () => {
+    const actual = insertionSort([1]);
+    const expected = [1];
+    assert.deepEqual(actual, expected);
+  });  
 
-  it('если длина массива равна 1, return этот массив', function() {
-    assert.deepEqual(insertionSort([1]), [1]);
-  });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(insertionSort(['a', 'b']), "not valid data");
-  });
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = insertionSort(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  }); 
 });
 
-describe('quickSort', function() {
 
-  it('для массива [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', function() {
-    assert.deepEqual(quickSort([9, -8, 0, 4, 3]), [-8, 0, 3, 4, 9]);
+describe('bubbleSort', () => {
+
+  it('for array [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', () => {
+    const actual = bubbleSort([9, -8, 0, 4, 3]);
+    const expected = [-8, 0, 3, 4, 9];
+    assert.deepEqual(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(quickSort(-578), "not valid data");
+  it('for argument isn`t array, return "not valid data"', () => {
+    const actual = bubbleSort(573);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(quickSort(NaN), "not valid data");
+  it('if array length equal 0, return "no data"', () => {
+    const actual = bubbleSort([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 0, return []', function() {
-    assert.deepEqual(quickSort([]), []);
-  });
+  it('if array length equal 1, return array', () => {
+    const actual = bubbleSort([1]);
+    const expected = [1];
+    assert.deepEqual(actual, expected);
+  });  
 
-  it('если длина массива равна 1, return этот массив', function() {
-    assert.deepEqual(quickSort([1]), [1]);
-  });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(quickSort(['a', 'b']), "not valid data");
-  });
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = bubbleSort(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  }); 
 });
 
-describe('mergeSort', function() {
 
-  it('для массива [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', function() {
-    assert.deepEqual(mergeSort([9, -8, 0, 4, 3]), [-8, 0, 3, 4, 9]);
+describe('quickSort', () => {
+
+  it('for array [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', () => {
+    const actual = quickSort([9, -8, 0, 4, 3]);
+    const expected = [-8, 0, 3, 4, 9];
+    assert.deepEqual(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(mergeSort(-578), "not valid data");
+  it('for argument isn`t array, return "not valid data"', () => {
+    const actual = quickSort(573);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(mergeSort(NaN), "not valid data");
+  it('if array length equal 0, return []', () => {
+    const actual = quickSort([]);
+    const expected = [];
+    assert.deepEqual(actual, expected);
   });
 
-  it('если длина массива равна 0, return []', function() {
-    assert.deepEqual(mergeSort([]), []);
-  });
+  it('if array length equal 1, return array', () => {
+    const actual = quickSort([1]);
+    const expected = [1];
+    assert.deepEqual(actual, expected);
+  });  
 
-  it('если длина массива равна 1, return этот массив', function() {
-    assert.deepEqual(mergeSort([1]), [1]);
-  });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(mergeSort(['a', 'b']), "not valid data");
-  });
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = quickSort(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  }); 
 });
+
+
+describe('mergeSort', () => {
+
+  it('for array [9, -8, 0, 4, 3], return [-8, 0, 3, 4, 9]', () => {
+    const actual = mergeSort([9, -8, 0, 4, 3]);
+    const expected = [-8, 0, 3, 4, 9];
+    assert.deepEqual(actual, expected);
+  });
+
+  it('for argument isn`t array, return "not valid data"', () => {
+    const actual = mergeSort(573);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+
+  it('if array length equal 0, return []', () => {
+    const actual = mergeSort([]);
+    const expected = [];
+    assert.deepEqual(actual, expected);
+  });
+
+  it('if array length equal 1, return array', () => {
+    const actual = mergeSort([1]);
+    const expected = [1];
+    assert.deepEqual(actual, expected);
+  });  
+
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = mergeSort(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  }); 
+});
+
+
+
+
+
+

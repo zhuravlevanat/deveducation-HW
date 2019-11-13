@@ -1,140 +1,132 @@
-describe('isPrimeNumber', function() {
+describe('isPrimeNumber', () => {
 
-  it('если number простое число, return true', function() {
-    assert.equal(isPrimeNumber(7), true);
+  it('if number is prime, return true', () => {
+    const actual = isPrimeNumber(7);
+    const expected = true;
+    assert.equal(actual, expected);
   });
 
-  it('если number составное число, return false', function() {
-    assert.equal(isPrimeNumber(6), false);
+  it('if number is compose, return false', () => {
+    const actual = isPrimeNumber(6);
+    const expected = false;
+    assert.equal(actual, expected);
   });
 
-  it('для отрицательных number, return false', function() {
-    assert.equal(isPrimeNumber(-6), false);
+  it('if number < 0, return false', () => {
+    const actual = isPrimeNumber(-6);
+    const expected = false;
+    assert.equal(actual, expected);
   });
 
-  it('для безконечно большого числа, return false', function() {
-    assert.equal(isPrimeNumber(Infinity), false);
+  it('if number is 0, return false', () => {
+    const actual = isPrimeNumber(0);
+    const expected = false;
+    assert.equal(actual, expected);
   });
 
-  it('для number равно 0, return false', function() {
-    assert.equal(isPrimeNumber(0), false);
+  it('if number is NaN or undefined, return false', () => {
+    const actual = isPrimeNumber('a');
+    const expected = false;
+    assert.deepEqual(actual, expected);
   });
 
-  it('для number равно 1, return false', function() {
-    assert.equal(isPrimeNumber(1), false);
+  it('if number is 1, return false', () => {
+    const actual = isPrimeNumber(1);
+    const expected = false;
+    assert.equal(actual, expected);
   });
-
-  it('для дробных number, return false', function() {
-    assert.equal(isPrimeNumber(0.5), false);
-  });
-
-  it('для number равного NaN, return false', function() {
-    assert.equal(isPrimeNumber(NaN), false);
-  });
-
-  it('для number равного undefined, return false', function() {
-    assert.equal(isPrimeNumber(undefined), false);
-  });
-
- });
+});
 
  describe('sqrt', function() {
 
-  it('корень с натурального числа 25, return 5', function() {
-    assert.equal(sqrt(25), 5);
+  it('sqrt from positive number 25, return 5', () => {
+    const actual = sqrt(25);
+    const expected = 5;
+    assert.equal(actual, expected);
   });
 
-  it('корень с отрицательного числа -25, return NaN', function() {
-    assert.isNaN(sqrt(-25));
+  it('sqrt from negative number -25, return "not valid data"', () => {
+    const actual = sqrt(-25);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('корень с числа 0, return 0', function() {
-    assert.equal(sqrt(0), 0);
+  it('sqrt from 0, return 0', () => {
+    const actual = sqrt(0);
+    const expected = 0;
+    assert.equal(actual, expected);
   });
 
-  it('корень с дробных чисел, return NaN', function() {
-    assert.isNaN(sqrt(0.5));
+  it('sqrt from Infinity, return "not valid data"', () => {
+    const actual = sqrt(Infinity);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('корень с безконечно большого числа, return NaN', function() {
-    assert.isNaN(sqrt(Infinity));
+  it('sqrt from NaN or undefined, return "not valid data"', () => {
+    const actual = sqrt('a');
+    const expected = 'not valid data';
+    assert.deepEqual(actual, expected);
+  });  
+});
+
+ describe('getFactorial', () => {
+
+  it('factorial for 5, return 120', () => {
+    const actual = getFactorial(5);
+    const expected = 120;
+    assert.equal(actual, expected);
   });
 
-  it('корень с NaN, return NaN', function() {
-    assert.isNaN(sqrt(NaN));
+  it('factorial for 0, return 1', () => {
+    const actual = getFactorial(0);
+    const expected = 1;
+    assert.equal(actual, expected);
   });
 
-  it('корень с undefined, return NaN', function() {
-    assert.isNaN(sqrt(undefined));
+  it('factorial for 1, return 1', () => {
+    const actual = getFactorial(1);
+    const expected = 1;
+    assert.equal(actual, expected);
+  });
+  
+  it('factorial for negative numbers, return "not valid data"', () => {
+    const actual = getFactorial(-5);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
+  it('factorial for NaN and undefined, return "not valid data"', () => {
+    const actual = getFactorial('a');
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
  });
 
- describe('getFactorial', function() {
+ describe('getSumOfNumbers', () => {
 
-  it('факториал для числа 5, return 120', function() {
-    assert.equal(getFactorial(5), 120);
+  it('sum of numbers for positive 578, return 20', () => {
+    const actual = getSumOfNumbers(578);
+    const expected = 20;
+    assert.equal(actual, expected);
   });
 
-  it('факториал для числа 0, return 1', function() {
-    assert.equal(getFactorial(0), 1);
+  it('sum of numbers for negative -578, return 20', () => {
+    const actual = getSumOfNumbers(-578);
+    const expected = 20;
+    assert.equal(actual, expected);
   });
 
-  it('факториал для числа 1, return 1', function() {
-    assert.equal(getFactorial(1), 1);
+  it('sum of numbers for 0, return 0', () => {
+    const actual = getSumOfNumbers(0);
+    const expected = 0;
+    assert.equal(actual, expected);
   });
 
-  it('факториал для отрицательного числа, return NaN', function() {
-    assert.deepEqual(getFactorial(-5), NaN);
+  it('sum of numbers for NaN, undefined, return "not valid data"', () => {
+    const actual = getSumOfNumbers('a');
+    const expected = 'not valid data';
+    assert.deepEqual(actual, expected);
   });
-
-  it('факториал для дробного числа, return NaN', function() {
-    assert.isNaN(getFactorial(0.5));
-  });
-
-  it('факториал для безконечно большого числа, return NaN', function() {
-    assert.isNaN(getFactorial(Infinity));
-  });
-
-  it('факториал для NaN, return NaN', function() {
-    assert.isNaN(getFactorial(NaN));
-  });
-
-  it('факториал для undefined, return NaN', function() {
-    assert.isNaN(getFactorial(undefined));
-  });
-
- });
-
- describe('getSumOfNumbers', function() {
-
-  it('сумма цифр для числа 578, return 20', function() {
-    assert.equal(getSumOfNumbers(578), 20);
-  });
-
-  it('сумма цифр для числа -578, return 20', function() {
-    assert.equal(getSumOfNumbers(-578), 20);
-  });
-
-  it('сумма цифр для числа 0, return 0', function() {
-    assert.equal(getSumOfNumbers(0), 0);
-  });
-
-  it('сумма цифр для дробного числа, return NaN', function() {
-    assert.isNaN(getSumOfNumbers(0.5));
-  });
-
-  it('сумма цифр для безконечно большого числа, return NaN', function() {
-    assert.isNaN(getSumOfNumbers(Infinity));
-  });
-
-  it('сумма цифр для NaN, return NaN', function() {
-    assert.isNaN(getSumOfNumbers(NaN));
-  });
-
-  it('сумма цифр для undefined, return NaN', function() {
-    assert.isNaN(getSumOfNumbers(undefined));
-  });
-
 });
 

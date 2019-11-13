@@ -1,186 +1,267 @@
-describe('getMinElementInArray', function() {
+describe('getMinElementInArray', () => {
 
-  it('для массива [9, -8, 0, 4, 3], return -8', function() {
-    assert.equal(getMinElementInArray([9, -8, 0, 4, 3]), -8);
+  it('for array [9, -8, 0, 4, 3], return -8', () => {
+    const actual = getMinElementInArray([9, -8, 0, 4, 3]);
+    const expected = -8;
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(getMinElementInArray(-578), "not valid data");
+  it('if argument isn`t array, return "not valid data"', () => {
+    const actual = getMinElementInArray(-576);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(getMinElementInArray(NaN), "not valid data");
+  it('if argument is NaN, return "not valid data"', () => {
+    const actual = getMinElementInArray(NaN);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 0, return no data', function() {
-    assert.equal(getMinElementInArray([]), "no data");
+  it('if array length equal 0, return "no data"', () => {
+    const actual = getMinElementInArray([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 1, return этот элемент', function() {
-    assert.equal(getMinElementInArray([1]), 1);
+  it('if array length equal 1, return its element', () => {
+    const actual = getMinElementInArray([1]);
+    const expected = 1;
+    assert.equal(actual, expected);
   });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(getMinElementInArray(['a', 'b']), "not valid data");
-  });
-});
-
-describe('getMaxElementInArray', function() {
-
-  it('для массива [9, -8, 0, 4, 3], return 9', function() {
-    assert.equal(getMaxElementInArray([9, -8, 0, 4, 3]), 9);
-  });
-
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(getMaxElementInArray(-578), "not valid data");
-  });
-
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(getMaxElementInArray(NaN), "not valid data");
-  });
-
-  it('если длина массива равна 0, return no data', function() {
-    assert.equal(getMaxElementInArray([]), "no data");
-  });
-
-  it('если длина массива равна 1, return этот элемент', function() {
-    assert.equal(getMaxElementInArray([1]), 1);
-  });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(getMaxElementInArray(['a', 'b']), "not valid data");
+  
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = getMinElementInArray(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 });
 
-describe('getMinIndexOfElementInArray', function() {
+describe('getMaxElementInArray', () => {
 
-  it('для массива [9, -8, 0, 4, 3], return 1', function() {
-    assert.equal(getMinIndexOfElementInArray([9, -8, 0, 4, 3]), 1);
+  it('for array [9, -8, 0, 4, 3], return 9', () => {
+    const actual = getMaxElementInArray([9, -8, 0, 4, 3]);
+    const expected = 9;
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(getMinIndexOfElementInArray(-578), "not valid data");
+  it('if argument isn`t array, return "not valid data"', () => {
+    const actual = getMaxElementInArray(-576);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(getMinIndexOfElementInArray(NaN), "not valid data");
+  it('if argument is NaN, return "not valid data"', () => {
+    const actual = getMaxElementInArray(NaN);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 0, return no data', function() {
-    assert.equal(getMinIndexOfElementInArray([]), "no data");
+  it('if array length equal 0, return "no data"', () => {
+    const actual = getMaxElementInArray([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 1, return 0', function() {
-    assert.equal(getMinIndexOfElementInArray([1]), 0);
+  it('if array length equal 1, return its element', () => {
+    const actual = getMaxElementInArray([1]);
+    const expected = 1;
+    assert.equal(actual, expected);
   });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(getMinIndexOfElementInArray(['a', 'b']), "not valid data");
-  });
-});
-
-describe('getMaxIndexOfElementInArray', function() {
-
-  it('для массива [9, -8, 0, 4, 3], return 0', function() {
-    assert.equal(getMaxIndexOfElementInArray([9, -8, 0, 4, 3]), 0);
-  });
-
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(getMaxIndexOfElementInArray(-578), "not valid data");
-  });
-
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(getMaxIndexOfElementInArray(NaN), "not valid data");
-  });
-
-  it('если длина массива равна 0, return no data', function() {
-    assert.equal(getMaxIndexOfElementInArray([]), "no data");
-  });
-
-  it('если длина массива равна 1, return 0', function() {
-    assert.equal(getMaxIndexOfElementInArray([1]), 0);
-  });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(getMaxIndexOfElementInArray(['a', 'b']), "not valid data");
+  
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = getMaxElementInArray(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 });
 
-describe('getSumOfElemetsWithOddIndex', function() {
+describe('getMinIndexOfElementInArray', () => {
 
-  it('для массива [9, -8, 0, 4, 3], return -4', function() {
-    assert.equal(getSumOfElemetsWithOddIndex([9, -8, 0, 4, 3]), -4);
+  it('for array [9, -8, 0, 4, 3], return 1', () => {
+    const actual = getMinIndexOfElementInArray([9, -8, 0, 4, 3]);
+    const expected = 1;
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(getSumOfElemetsWithOddIndex(-578), "not valid data");
+  it('if argument isn`t array, return "not valid data"', () => {
+    const actual = getMinIndexOfElementInArray(-576);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(getSumOfElemetsWithOddIndex(NaN), "not valid data");
+  it('if argument is NaN, return "not valid data"', () => {
+    const actual = getMinIndexOfElementInArray(NaN);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 0, return no data', function() {
-    assert.equal(getSumOfElemetsWithOddIndex([]), "no data");
+  it('if array length equal 0, return "no data"', () => {
+    const actual = getMinIndexOfElementInArray([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 1, return 0', function() {
-    assert.equal(getSumOfElemetsWithOddIndex([1]), 0);
+  it('if array length equal 1, return 0', () => {
+    const actual = getMinIndexOfElementInArray([1]);
+    const expected = 0;
+    assert.equal(actual, expected);
   });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(getSumOfElemetsWithOddIndex(['a', 'b']), "not valid data");
-  });
-});
-
-describe('getReversedArray', function() {
-
-  it('для массива [9, -8, 0, 4, 3], return [3, 4, 0, -8, 9]', function() {
-    assert.deepEqual(getReversedArray([9, -8, 0, 4, 3]), [3, 4, 0, -8, 9]);
-  });
-
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(getReversedArray(-578), "not valid data");
-  });
-
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(getReversedArray(NaN), "not valid data");
-  });
-
-  it('если длина массива равна 0, return no data', function() {
-    assert.equal(getReversedArray([]), "no data");
-  });
-
-  it('если длина массива равна 1, return массив', function() {
-    assert.deepEqual(getReversedArray([1]), [1]);
-  });
-
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(getReversedArray(['a', 'b']), "not valid data");
+  
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = getMinIndexOfElementInArray(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 });
 
-describe('getNumberOfOddElementsInArray', function() {
+describe('getMaxIndexOfElementInArray', () => {
 
-  it('для массива [9, -8, 0, 4, 3], return 3', function() {
-    assert.deepEqual(getNumberOfOddElementsInArray([9, -8, 0, 4, 3]), 3);
+  it('for array [9, -8, 0, 4, 3], return 0', () => {
+    const actual = getMaxIndexOfElementInArray([9, -8, 0, 4, 3]);
+    const expected = 0;
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент не массив, return "not valid data"', function() {
-    assert.equal(getNumberOfOddElementsInArray(-578), "not valid data");
+  it('if argument isn`t array, return "not valid data"', () => {
+    const actual = getMaxIndexOfElementInArray(-576);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если аргумент NaN, return "not valid data"', function() {
-    assert.equal(getNumberOfOddElementsInArray(NaN), "not valid data");
+  it('if argument is NaN, return "not valid data"', () => {
+    const actual = getMaxIndexOfElementInArray(NaN);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 
-  it('если длина массива равна 0, return no data', function() {
-    assert.equal(getNumberOfOddElementsInArray([]), "no data");
+  it('if array length equal 0, return "no data"', () => {
+    const actual = getMaxIndexOfElementInArray([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
   });
 
-  it('если массив содержит нечисловые значения, return "not valid data"', function() {
-    assert.equal(getNumberOfOddElementsInArray(['a', 'b']), "not valid data");
+  it('if array length equal 1, return 0', () => {
+    const actual = getMaxIndexOfElementInArray([1]);
+    const expected = 0;
+    assert.equal(actual, expected);
+  });
+  
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = getMaxIndexOfElementInArray(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
   });
 });
 
+describe('getSumOfElemetsWithOddIndex', () => {
+
+  it('for array [9, -8, 0, 4, 3], return -4', () => {
+    const actual = getSumOfElemetsWithOddIndex([9, -8, 0, 4, 3]);
+    const expected = -4;
+    assert.equal(actual, expected);
+  });
+
+  it('if argument isn`t array, return "not valid data"', () => {
+    const actual = getSumOfElemetsWithOddIndex(-576);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+
+  it('if argument is NaN, return "not valid data"', () => {
+    const actual = getSumOfElemetsWithOddIndex(NaN);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+
+  it('if array length equal 0, return "no data"', () => {
+    const actual = getSumOfElemetsWithOddIndex([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
+  });
+
+  it('if array length equal 1, return 0', () => {
+    const actual = getSumOfElemetsWithOddIndex([1]);
+    const expected = 0;
+    assert.equal(actual, expected);
+  });
+  
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = getSumOfElemetsWithOddIndex(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+});
+
+describe('getReversedArray', () => {
+
+  it('for array [9, -8, 0, 4, 3], return [3, 4, 0, -8, 9]', () => {
+    const actual = getReversedArray([9, -8, 0, 4, 3]);
+    const expected = [3, 4, 0, -8, 9];
+    assert.deepEqual(actual, expected);
+  });
+
+  it('if argument isn`t array, return "not valid data"', () => {
+    const actual = getReversedArray(-576);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+
+  it('if argument is NaN, return "not valid data"', () => {
+    const actual = getReversedArray(NaN);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+
+  it('if array length equal 0, return "no-data"', () => {
+    const actual = getReversedArray([]);
+    const expected = 'no data';
+    assert.deepEqual(actual, expected);
+  });
+
+  it('if array length equal 1, return array', () => {
+    const actual = getReversedArray([1]);
+    const expected = [1];
+    assert.deepEqual(actual, expected);
+  });
+  
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = getReversedArray(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+});
+
+describe('getNumberOfOddElementsInArray', () => {
+
+  it('for array [9, -8, 0, 4, 3], return 3', () => {
+    const actual = getNumberOfOddElementsInArray([9, -8, 0, 4, 3]);
+    const expected = 3;
+    assert.equal(actual, expected);
+  });
+
+  it('if argument isn`t array, return "not valid data"', () => {
+    const actual = getNumberOfOddElementsInArray(-576);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+
+  it('if argument is NaN, return "not valid data"', () => {
+    const actual = getNumberOfOddElementsInArray(NaN);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+
+  it('if array length equal 0, return "no data"', () => {
+    const actual = getNumberOfOddElementsInArray([]);
+    const expected = 'no data';
+    assert.equal(actual, expected);
+  });
+
+  it('if array contains not numeric values, return "not valid data"', () => {
+    const actual = getNumberOfOddElementsInArray(['a', 'b']);
+    const expected = 'not valid data';
+    assert.equal(actual, expected);
+  });
+});
 
