@@ -3,7 +3,8 @@
 function getSumOrMult(a, b) {
   a = Number(a);
   b = Number(b);
-  if (isNaN(a) || isNaN(b)) return NaN
+  if ((a ^ 0) !== a) return "non valid data";
+  if (isNaN(a) || isNaN(b)) return "non valid data"
   return (a % 2 === 0) ? a * b: a + b
 }
 
@@ -47,10 +48,16 @@ function getSumOfPositiveNumbers(firstNum, secondNum, thirdNum) {
 }
 
 function getMaxValue(a, b, c) {
+  a = Number(a);
+  b = Number(b);
+  c = Number(c);
+  if (isNaN(a) || isNaN(b) || isNaN(c)) return NaN;
   return (a*b*c > a+b+c) ? a*b*c + 3: a+b+c+3;
 }
 
 function getStudentMark(rating) {
+  rating = Number(rating);
+  if (isNaN(rating)) return NaN;
   let mark;
 
   if (rating >= 0 && rating <= 19) {

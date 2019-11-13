@@ -13,7 +13,8 @@ function getSumOfEvenNumbers() {
 }
 
 function isPrimeNumber(number) {
-  if (number <= 0) return false;
+  number = Number(number);
+  if (!isFinite(number) || isNaN(number) || (number ^ 0) !== number || number <= 0) return false;
   let rezult = number != 1;
   for (let i = 2; i < number; i++) {
       if (number % i === 0) {
@@ -25,6 +26,8 @@ function isPrimeNumber(number) {
 }
 
 function sqrt(number) {
+  number = Number(number);
+  if (number < 0 || !isFinite(number) || isNaN(number) || (number ^ 0) !== number) return NaN; 
   let low = 0, high = number;
     while(low <= high) {
       let middle = Math.floor((low + high) / 2);
@@ -37,18 +40,25 @@ function sqrt(number) {
     return high;
 }
 
-function getFactorial(n) {
-  if (n < 0) return 'Factorial for positive numbers';  
-  
-  return (n > 1) ? n * getFactorial(n - 1) : 1;
+function getFactorial(number) {
+  number = Number(number);
+  if (number < 0 || !isFinite(number) || isNaN(number) || (number ^ 0) !== number) return NaN; 
+  if (number < 0) return NaN;   
+  let result = 1;
+  for (i = 1; i <= number; i++) 
+    result = result * i;
+  return result;
 }
 
+
 function getSumOfNumbers(number) {
-  let num = number;
+  number = Number(number);
+  if (!isFinite(number) || isNaN(number) || (number ^ 0) !== number) return NaN; 
+  if (number < 0) number = number*(-1);
   let sum = 0;
-  while (num > 0) {
-    sum += num % 10;
-    num = Math.floor(num / 10);
+  while (number > 0) {
+    sum += number % 10;
+    number = Math.floor(number / 10);
   }
   return sum;
 }
@@ -71,7 +81,7 @@ function getInverseNumber(number) {
 
 console.log(getSumOfEvenNumbers());
 console.log(isPrimeNumber(1));
-console.log(sqrt(64));
+console.log(sqrt(-25));
 console.log(getFactorial(3));
 console.log(getSumOfNumbers(4567));
 console.log(getInverseNumber(4567));

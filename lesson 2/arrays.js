@@ -1,5 +1,15 @@
 function getMinElementInArray(array) {
- let minElem = array[0];
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return array[0];
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
+
+  let minElem = array[0];
   
   for(let i = 1; i < array.length-1; i++) {
     if (array[i] < minElem) {
@@ -10,6 +20,15 @@ function getMinElementInArray(array) {
 }
 
 function getMaxElementInArray(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return array[0];
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   let maxElem = array[0];
   
   for(let i = 1; i < array.length-1; i++) {
@@ -21,6 +40,15 @@ function getMaxElementInArray(array) {
 }
 
 function getMinIndexOfElementInArray(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return 0;
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   let minElem = array[0];
   let index = 0;
   
@@ -34,6 +62,15 @@ function getMinIndexOfElementInArray(array) {
 }
 
 function getMaxIndexOfElementInArray(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return 0;
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   let maxElem = array[0];
   let index = 0;
   
@@ -47,6 +84,15 @@ function getMaxIndexOfElementInArray(array) {
 }
 
 function getSumOfElemetsWithOddIndex(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return 0;
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   let i = 1, sum = 0;
   
   while(i < array.length) {
@@ -57,6 +103,15 @@ function getSumOfElemetsWithOddIndex(array) {
 }
 
 function getReversedArray(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return array;
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   const newArr = [];
 
   for (let i = 0; i < array.length; i++) {
@@ -67,10 +122,18 @@ function getReversedArray(array) {
 }
 
 function getNumberOfOddElementsInArray(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   let result = 0;
 
   for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 !== 0) {
+    if (array[i] % 2 !== 0 || array[i] === 0) {
       result += 1;
     }
   }

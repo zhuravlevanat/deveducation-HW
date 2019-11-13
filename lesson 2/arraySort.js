@@ -1,4 +1,13 @@
 function bubbleSort(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return array;
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   for (let i = 0; i < array.length-1; i++) {
     for (let j = 0; j < array.length-1-i; j++) {
       if (array[j] > array[j+1]) {
@@ -12,6 +21,15 @@ function bubbleSort(array) {
 }
 
 function selectionSort(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return array;
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   for (let i = 0; i < array.length; i++) {
     let minIndex = i;
     for (let j = i+1; j < array.length; j++) {
@@ -29,6 +47,15 @@ function selectionSort(array) {
 }
 
 function insertionSort(array) {
+  if (!Array.isArray(array)) return "not valid data";
+  if (array.length === 0) return "no data";
+  if (array.length === 1) return array;
+
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   for (let i = 1; i < array.length; i++) {
     let elem = array[i], j;    
     for (j = i; j >= 0 && array[j-1] > elem; j--) {
@@ -40,6 +67,13 @@ function insertionSort(array) {
 }
 
 function quickSort(array) {
+  if (!Array.isArray(array)) return "not valid data";
+    
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
 	if (array.length <= 1) { 
 		return array;
 	} else {
@@ -60,6 +94,13 @@ function quickSort(array) {
 }
 
 function mergeSort(array) {
+  if (!Array.isArray(array)) return "not valid data";
+    
+  for(let i = 0; i < array.length; i++) {
+    if (isNaN(array[i])) {
+      return "not valid data";
+    } 
+  }
   if (array.length <= 1) {
     return array
   }
