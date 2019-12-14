@@ -7,9 +7,12 @@ describe('getDayName', () => {
   });
 
   it('if argument < 1 && > 7, return "not valid data"', () => {
-    const actual = getDayName(30);
+    const day = 30;
+
+    const actual = getDayName(day);
+
     const expected = 'not valid data';
-    assert.equal(actual, expected);
+    assert.strictEqual(actual, expected);
   });
 
   it('if argument NaN or undefined, return "not valid data"', () => {

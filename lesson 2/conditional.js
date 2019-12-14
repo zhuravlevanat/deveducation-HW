@@ -1,5 +1,7 @@
 //conditional statements
 
+
+
 function getSumOrMult(a, b) {
   a = Number(a);
   b = Number(b);
