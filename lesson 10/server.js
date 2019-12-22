@@ -1,44 +1,76 @@
 var WebSocket = new require('ws');
 
-var clients = {};
+var clients = [[], [], []];
 
 var wss = new WebSocket.Server({port: 8081});
 
 wss.on('connection', (ws) => {
-    // clients.push(ws);
-    const id = Math.random();
-    clients[id] = ws;
-
     ws.on('message', (message) => {
+        const msg = JSON.parse(message);
         console.log('Received new message ' + message);
+        if (msg.type === 'connect') {
+            const id = Math.random();
+            clients[msg.room].push({ id, name: msg.name, ws: ws });
 
-        for(let key in clients) {
-            clients[key].send(JSON.stringify({
-                ...message,
-                key,
-            }));
+            clients[msg.room].forEach(client => {
+                client.ws.send(JSON.stringify({
+                    type: 'connect',
+                    name: msg.name,
+                    id,
+                    room: msg.room,
+                }));
+                if (client.id === id) {
+                    client.ws.send(JSON.stringify({
+                        type: 'users',
+                        users: clients[msg.room],
+                        room: msg.room,
+                    }));  
+                }
+            });
+            return;
         }
 
-        
+        if (msg.type === 'disconnect') {
+            let idOfClosedClient;
+            clients[msg.room] = clients[msg.room].filter(({ id, name }) => {
+                const isClosed = name === msg.name;
+                idOfClosedClient = id;
+                return !isClosed;
+            });
+
+            clients[msg.room].forEach(({ ws }) => {
+                ws.send(JSON.stringify({
+                    type: 'disconnect',
+                    id: idOfClosedClient,
+                }));
+            });
+        }
+
+        clients[msg.room].forEach(({ ws }) => {
+            ws.send(JSON.stringify(msg));
+        });        
     });
 
     ws.on('close', (connection) => {
-        console.log(connection);
         let idOfClosedClient;
-        for(let key in clients) {
-            if(clients[key].readyState === 3) {
-                idOfClosedClient = key;
-                delete clients[key];
+        let room;
+        clients.forEach((roomClients, index) => {
+            if (roomClients.find(client => client.ws.readyState === 3)) {
+                room = index;
             }
-        }
+        });
+        clients[room] = clients[room].filter(({ id, ws }) => {
+            const isClosed = ws.readyState === 3;
+            idOfClosedClient = id;
+            return !isClosed;
+        });
 
-        for(let client of clients) {
-            client.send(JSON.stringify({
+        clients[room].forEach(({ ws }) => {
+            ws.send(JSON.stringify({
                 type: 'disconnect',
-                name: idOfClosedClient,
-                message: '',
+                id: idOfClosedClient,
             }));
-        }
+        });
     });
 
 });

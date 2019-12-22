@@ -1,0 +1,109 @@
+.container {
+  display: flex;
+}
+
+.authorization {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+input.invalid {
+  background-color: red;
+}
+
+input.hidden {
+  display: none;
+}
+
+.tabset__title {
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff; 
+  padding: 5px;
+  cursor: pointer;
+}
+
+.tabset__item:hover{
+  border-color:lightgoldenrodyellow;
+}
+
+.tabset__item.active .tabset__title{
+  background-color: #ffffff;
+  color: black;
+  
+}
+
+.hidden {
+  display: none;
+}
+.active {
+  display: block;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.display {
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #f7eaea;
+  color: black;
+  min-height: 100px;
+}
+
+.users-list {
+  list-style-type: none;
+  color: #ffffff;
+}
+
+.message__text {
+  width: 77%;
+}
+
+.users-list__item {
+  color: #ffffff;
+  padding-left: 10px;
+  position: relative;
+}
+
+.users-list__item::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 5px;
+}
+
+.users-list__item.active {
+  text-decoration: underline;
+}
+
+.offline::before {
+  background-color: red!important;
+}
+
+h5 {
+  color: #ffffff;
+}
+
+.user-name {
+  width: 60%;
+}
+
+div input[type="submit"] {
+	margin-top: 10px;
+}
+
+.form-user-name {
+  margin-bottom: 0;
+}
+
+.edit-btn, .delete-btn {
+  margin-left: 5px;
+  cursor: pointer;
+}
