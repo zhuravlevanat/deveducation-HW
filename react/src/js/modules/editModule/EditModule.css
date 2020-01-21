@@ -1,0 +1,256 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", sans-serif;
+    color: #198383
+}
+
+html, body {
+    height: 100%
+}
+
+.wrapper {
+    min-height: 100%;
+    height: 100%;
+    padding-top: 50px;
+    background-color: #c8f3f3;
+    justify-content: center
+}
+
+.wrapper__first-page-container {
+    width: 800px;
+    margin: 0 auto;
+    min-height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #7cf3f3;
+    border: 1px solid #118e8e;
+    border-radius: 5px
+}
+
+.wrapper__main-container {
+    width: 800px;
+    min-height: 90%;
+    margin: 0 auto;
+    display: block;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #7cf3f3;
+    border: 1px solid #118e8e;
+    border-radius: 5px
+}
+
+.login-form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.login-form__item {
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.login-form__warning {
+    visibility: hidden;
+    color: #cb152b;
+    font-weight: bold
+}
+
+.login-form__button-wrap {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center
+}
+
+.item__label {
+    display: block;
+    margin-bottom: 3px
+}
+
+.item__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #198383;
+    border: 1px solid #118e8e;
+    background-color: #c8f3f3;
+    border-radius: 5px
+}
+
+.button-wrap__button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: #198383;
+    color: #c8f3f3;
+    cursor: pointer
+}
+
+.main-container__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #ed7b1d;
+    border-radius: 5px 5px 0 0
+}
+
+.main-container__tabset {
+    color: #7cf3f3
+}
+
+.header__button {
+    width: 180px;
+    padding: 8px;
+    background-color: #7cf3f3;
+    border: 1px solid #fdba82;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer
+}
+
+.header__select {
+    width: 180px;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer
+}
+
+.tabset__header, .tabset .link {
+    display: flex;
+    background-color: #f1f1f1;
+    overflow: hidden
+}
+
+.tabset__wrap {
+    max-height: 700px;
+    min-height: 300px;
+    padding: 40px 20px 20px
+}
+
+.link__item {
+    flex: 1;
+    padding: 15px;
+    background-color: #118e8e;
+    color: #7cf3f3;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer
+}
+
+.link__item:hover {
+    background-color: #16bcbc
+}
+
+.link__item.active {
+    background-color: #7cf3f3;
+    color: #118e8e
+}
+
+.link__item:disabled {
+    background-color: #18c5c5
+}
+
+.wrap__content {
+    max-height: 650px;
+    min-height: 300px;
+    overflow-y: auto
+}
+
+.content.hidden, .content .hidden {
+    display: none
+}
+
+.content__table {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.table th, .table td {
+    padding: 5px;
+    border: 2px solid #198383;
+    text-align: center;
+    background: #fff;
+    color: #000
+}
+
+.table th {
+    background: #118e8e;
+    color: #7cf3f3
+}
+
+.list__list-item {
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c8f3f3;
+    border: 1px solid #fdba82;
+    border-radius: 5px
+}
+
+.list-item__text {
+    overflow-y: auto
+}
+
+.list-item__button {
+    margin-left: 20px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 1px solid #fdba82;
+    background-color: #ed7b1d;
+    color: #198383;
+    font-size: 16px;
+    cursor: pointer
+}
+
+.edit-form__edit-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 60px;
+    margin-right: 40px
+}
+
+.edit-form__edit-buttons {
+    display: flex;
+    justify-content: space-around
+}
+
+.edit-item textarea {
+    width: 70%;
+    height: 80px;
+    margin-left: 30px;
+    resize: none
+}
+
+.edit-buttons__button {
+    width: 180px;
+    height: 40px;
+    color: #7cf3f3;
+    background-color: #118e8e;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer
+}
+
+.textarea-block {
+    width: 70%;
+    height: 80px;
+    margin-left: 30px;
+    resize: none
+}
